@@ -26,8 +26,13 @@ const LinkedList = () => {
         length++
     }
 
+    const size = () => {
+        return length
+      }
+
     return {
         append,
-        prepend
+        prepend,
+        size
     }
 };
