@@ -34,10 +34,23 @@ const LinkedList = () => {
         return headNode
     }
 
+    const tail = () => {
+        if (headNode === null) {
+            return "List is empty"
+        } else {
+            let currentNode = headNode
+            while(currentNode.nextNode !== null){   //while there is a next node,
+                currentNode = currentNode.nextNode; //hop to the nex node
+            }
+            return currentNode
+        }
+    }
+
     return {
         append,
         prepend,
         size,
-        head
+        head,
+        tail
     }
 };
