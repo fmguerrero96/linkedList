@@ -3,15 +3,15 @@ const Node = (value = null, nextNode = null) => {
 };
 
 const LinkedList = () => {
-    let head = null;
+    let headNode = null;
     let length = 0; 
 
     const append = (value) => {
         let newNode = Node(value);
-        if (head === null) {
-            head = newNode
+        if (headNode === null) {
+            headNode = newNode
         } else {
-            let currentNode = head 
+            let currentNode = headNode
             while(currentNode.nextNode !== null){   //while there is a next node,
                 currentNode = currentNode.nextNode; //hop to the nex node
             }
@@ -21,14 +21,14 @@ const LinkedList = () => {
     }
 
     const prepend = (value) => {
-        let newNode = Node(value, head);
-        head = newNode
+        let newNode = Node(value, headNode);
+        headNode = newNode
         length++
     }
 
     const size = () => {
         return length
-      }
+    }
 
     return {
         append,
