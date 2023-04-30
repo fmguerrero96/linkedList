@@ -42,8 +42,18 @@ const LinkedList = () => {
             while(currentNode.nextNode !== null){   //while there is a next node,
                 currentNode = currentNode.nextNode; //hop to the nex node
             }
-            return currentNode
+            return currentNode                      //return node whose nextNode value equals null
         }
+    }
+
+    const at = (index) => {
+        let currentNode = headNode
+        let count = 0
+        while (count < index) {
+          currentNode = currentNode.nextNode
+          count++
+        }
+        return currentNode
     }
 
     return {
@@ -51,6 +61,7 @@ const LinkedList = () => {
         prepend,
         size,
         head,
-        tail
+        tail,
+        at
     }
 };
