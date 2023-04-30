@@ -30,9 +30,14 @@ const LinkedList = () => {
         return length
     }
 
+    const head = () => {
+        return headNode
+    }
+
     return {
         append,
         prepend,
-        size
+        size,
+        head
     }
 };
