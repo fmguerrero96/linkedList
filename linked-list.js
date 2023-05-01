@@ -57,13 +57,13 @@ const LinkedList = () => {
     }
 
     const pop = () => {
-        let currentNode = headNode
-        let next = headNode.nextNode
-        while(next.nextNode !== null){
+        let currentNode = headNode              //start at head node (at index 0)
+        let next = headNode.nextNode            //starts one node ahead (at index 1)
+        while(next.nextNode !== null){          //then we move to the very last node
             currentNode = currentNode.nextNode
-            next = next.nextNode; 
+            next = next.nextNode;               //always staying one node ahead
           }
-          currentNode.nextNode = null
+          currentNode.nextNode = null           //second to last node now points at null
           length--
           return next
       }
