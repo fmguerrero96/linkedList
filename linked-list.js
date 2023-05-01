@@ -56,12 +56,25 @@ const LinkedList = () => {
         return currentNode
     }
 
+    const pop = () => {
+        let currentNode = headNode
+        let next = headNode.nextNode
+        while(next.nextNode !== null){
+            currentNode = currentNode.nextNode
+            next = next.nextNode; 
+          }
+          currentNode.nextNode = null
+          length--
+          return next
+      }
+
     return {
         append,
         prepend,
         size,
         head,
         tail,
-        at
+        at,
+        pop
     }
 };
