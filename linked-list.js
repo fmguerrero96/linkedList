@@ -112,7 +112,17 @@ const LinkedList = () => {
         const newNode = Node(value, prevousIndex.nextNode)
         prevousIndex.nextNode = newNode
         length++
-      }
+    }
+
+    const removeAt = (index) => {
+        if (index === 0) {
+          headNode = headNode.nextNode;
+          return;
+        }
+        const previousNode = at(index - 1);
+        previousNode.nextNode = previousNode.nextNode.nextNode;
+        length--;
+    }
 
     return {
         append,
@@ -125,6 +135,7 @@ const LinkedList = () => {
         contains,
         find,
         toString,
-        insertAt
+        insertAt,
+        removeAt
     }
 };
