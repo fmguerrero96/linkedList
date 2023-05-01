@@ -68,16 +68,29 @@ const LinkedList = () => {
           return next
       }
 
-    const contains = (item) => {
+    const contains = (value) => {
         let currentNode = headNode
         while(currentNode !== null){
-            if (currentNode.value === item){
+            if (currentNode.value === value){
             return true
             }
             currentNode = currentNode.nextNode
         }
         return false
     }
+
+    const find = (value) => {
+        let currentNode = headNode
+        let index = 0
+        while (currentNode !== null){
+          if (currentNode.value === value){
+            return index
+          }
+          currentNode = currentNode.nextNode
+          index++
+        }
+        return null
+      }
 
     return {
         append,
@@ -87,6 +100,7 @@ const LinkedList = () => {
         tail,
         at,
         pop,
-        contains
+        contains,
+        find
     }
 };
