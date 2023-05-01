@@ -1,1 +1,1 @@
-# linkedList
+This project is part of The Odin Project's curriculum. The main objective of this project was to build a single linked list, as well as different methods that could be applied to the linked list. To read all the requirements and instructions given for this porject visit https://www.theodinproject.com/lessons/javascript-linked-lists. 
