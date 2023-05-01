@@ -2,7 +2,7 @@ const Node = (value = null, nextNode = null) => {
     return {value, nextNode};
 };
 
-const LinkedList = () => {
+const Linkedlist = () => {
     let headNode = null;
     let length = 0; 
 
@@ -36,7 +36,7 @@ const LinkedList = () => {
 
     const tail = () => {
         if (headNode === null) {
-            return "List is empty"
+            return "list is empty"
         } else {
             let currentNode = headNode
             while(currentNode.nextNode !== null){   //while there is a next node,
@@ -139,3 +139,27 @@ const LinkedList = () => {
         removeAt
     }
 };
+
+const list = Linkedlist()
+
+console.log(list.size()) //prints 0
+list.append(3)
+list.append(4)
+list.append(5)
+list.append(6)
+list.append(7)
+list.append(8)
+list.append(9)
+list.prepend(2)
+console.log(list.size()) //prints 8
+console.log(list.head())
+console.log(list.tail())
+console.log(list.toString()) //(2) -> (3) -> (4) -> (5) -> (6) -> (7) -> (8) -> (9) ->  null
+list.pop()
+console.log(list.toString()) //(2) -> (3) -> (4) -> (5) -> (6) -> (7) -> (8) ->  null
+console.log(list.contains(6)) //returns true
+console.log(list.contains(20)) //returns false
+console.log(list.find(6)) //prints 4
+list.insertAt(30, 6)
+list.removeAt(2) //4 is removed
+console.log(list.toString()) //(2) -> (3) -> (5) -> (6) -> (7) -> (30) -> (8) ->  null
