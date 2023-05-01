@@ -103,6 +103,17 @@ const LinkedList = () => {
         return result
     }
 
+    const insertAt = (value, index) => {
+        if(index === 0){
+          prepend(value)
+          return
+        }
+        const prevousIndex = at(index-1)
+        const newNode = Node(value, prevousIndex.nextNode)
+        prevousIndex.nextNode = newNode
+        length++
+      }
+
     return {
         append,
         prepend,
@@ -113,6 +124,7 @@ const LinkedList = () => {
         pop,
         contains,
         find,
-        toString
+        toString,
+        insertAt
     }
 };
