@@ -68,6 +68,17 @@ const LinkedList = () => {
           return next
       }
 
+    const contains = (item) => {
+        let currentNode = headNode
+        while(currentNode !== null){
+            if (currentNode.value === item){
+            return true
+            }
+            currentNode = currentNode.nextNode
+        }
+        return false
+    }
+
     return {
         append,
         prepend,
@@ -75,6 +86,7 @@ const LinkedList = () => {
         head,
         tail,
         at,
-        pop
+        pop,
+        contains
     }
 };
