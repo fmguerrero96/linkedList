@@ -92,6 +92,17 @@ const LinkedList = () => {
         return null
       }
 
+    const toString = () => {
+        let result = ''
+        let currentNode = headNode
+        while(currentNode !== null){
+            result += '(' +`${currentNode.value}`+ ') -> '
+            currentNode = currentNode.nextNode
+        }
+        result += ' null'
+        return result
+    }
+
     return {
         append,
         prepend,
@@ -101,6 +112,7 @@ const LinkedList = () => {
         at,
         pop,
         contains,
-        find
+        find,
+        toString
     }
 };
